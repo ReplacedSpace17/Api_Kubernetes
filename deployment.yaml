@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiheladeria-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: apiheladeria
+  template:
+    metadata:
+      labels:
+        app: apiheladeria
+    spec:
+      containers:
+      - name: apiheladeria
+        image: replacedspace17/apiheladeria:v1

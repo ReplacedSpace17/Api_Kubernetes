@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apiheladeria-ingress
+spec:
+  rules:
+  - host: api.jgutierrez.com  
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: apiheladeria-service
+            port:
+              number: 80
